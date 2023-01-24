@@ -21,7 +21,6 @@ export default function(query, userConfig = {}) {
       }
 
       renderLoading() {
-        console.log('config', config)
         if (!config.loading) return this.renderComposed()
         if (userConfig.loading) return config.loading
         // eslint-disable-next-line
@@ -61,7 +60,6 @@ export default function(query, userConfig = {}) {
 
       render() {
         const {networkStatus, error} = this.props
-        console.log('ki wa', config, networkStatus, error)
         if (networkStatus === 1) {
           return this.renderLoading()
         }
