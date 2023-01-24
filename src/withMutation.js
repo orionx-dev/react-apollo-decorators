@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import {graphql} from 'react-apollo'
+import {graphql} from '@apollo/client/react/hoc'
 import filterObject from './filterObject'
 import cloneDeep from 'lodash/cloneDeep'
 

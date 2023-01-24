@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import {graphql} from 'react-apollo'
+import {graphql} from '@apollo/client/react/hoc'
 import React from 'react'
 import Loading from './Loading'
 import ErrorComponent from './Error'
@@ -21,6 +21,7 @@ export default function(query, userConfig = {}) {
       }
 
       renderLoading() {
+        console.log('config', config)
         if (!config.loading) return this.renderComposed()
         if (userConfig.loading) return config.loading
         // eslint-disable-next-line
@@ -60,6 +61,7 @@ export default function(query, userConfig = {}) {
 
       render() {
         const {networkStatus, error} = this.props
+        console.log('ki wa', config, networkStatus, error)
         if (networkStatus === 1) {
           return this.renderLoading()
         }

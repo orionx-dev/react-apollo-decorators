@@ -1,4 +1,4 @@
-import { createFragment } from 'apollo-client'
+import { createFragment } from '@apollo/client'
 import _ from 'underscore'
 
 export default function (doc, fragments) {

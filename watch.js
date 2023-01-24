@@ -6,13 +6,13 @@ require('colors')
 const pkg = JSON.parse(fs.readFileSync('package.json'))
 console.log(`\nWatching ${pkg.name} v${pkg.version}\n`.underline.bold)
 
-const build = spawn('yarn', ['run', 'build'])
+const build = spawn('npm', ['run', 'build'])
 build.on('close', code => console.log('Initial build ready\n'.grey)) // ready
 build.on('error', error => console.log(error))
 
 const fileChanged = function (filename) {
   if (filename.endsWith('.less')) {
-    const build = spawn('yarn', ['run', 'build-styles'])
+    const build = spawn('npm', ['run', 'build-styles'])
     setTimeout(() => {
       const result = fs.readFileSync('./lib/styles.css')
       fs.writeFileSync('./lib/styles.css', result + '\n')

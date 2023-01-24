@@ -1,5 +1,5 @@
 import React from 'react'
-import {withApollo} from 'react-apollo'
+import {withApollo} from '@apollo/client/react/hoc'
 import getVariables from './getVariables'
 import autobind from 'autobind-decorator'
 import PropTypes from 'prop-types'

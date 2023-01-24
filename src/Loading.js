@@ -19,6 +19,7 @@ export default class Loading extends React.Component {
   }
 
   render() {
+    console.log('loading!!')
     return <div style={this.getStyles()} />
   }
 }
