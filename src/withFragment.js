@@ -1,5 +1,5 @@
 import { createFragment } from '@apollo/client'
-import _ from 'underscore'
+import includes from 'lodash/includes'
 
 export default function (doc, fragments) {
   return function (ComposedComponent) {
@@ -16,7 +16,7 @@ export const getFragments = function (fragments) {
   const present = []
   return fragments.filter(fragment => {
     const name = fragment.name.value
-    if (_.contains(present, name)) {
+    if (includes(present, name)) {
       return false
     }
     present.push(name)
