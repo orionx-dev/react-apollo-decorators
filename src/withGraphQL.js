@@ -80,9 +80,11 @@ export default function(query, userConfig = {}) {
       ...config,
       props: ({ownProps, data}) => {
         return {
-          _data: data,
+          _data: {
+            ...(data.previousData ? {...data.previousData, ...data} : {...data}),
+          },
           ...ownProps,
-          ...data
+          ...(data.previousData ? {...data.previousData, ...data} : {...data}),
         }
       },
       options: props => {
