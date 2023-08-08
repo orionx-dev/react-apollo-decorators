@@ -14,7 +14,7 @@ export default function (getQuery, userOptions) {
         this.component = this.getComponent(this.props)
       }
 
-      componentWillReceiveProps (nextProps) {
+      UNSAFE_componentWillReceiveProps (nextProps) {
         if (getQuery(this.props) !== getQuery(nextProps)) {
           this.component = this.getComponent(nextProps)
         }
